@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meus Links</title>
+<style>
+  :root{
+    --bg: #ffffff;
+    --fg: #000000;
+    --line: #000000;
+    --muted: #4a4a4a;
+    --card-bg: #f2f2f2;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: #000000;
+      --fg: #ffffff;
+      --line: #ffffff;
+      --muted: #bdbdbd;
+      --card-bg: #111111;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: #000000;
+    --fg: #ffffff;
+    --line: #ffffff;
+    --muted: #bdbdbd;
+    --card-bg: #111111;
+  }
+
+  * { box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: Arial, Helvetica, sans-serif;
+    display:flex;
+    justify-content:center;
+    min-height:100vh;
+  }
+
+  .page{
+    width:100%;
+    max-width:480px;
+    padding: 0 0 48px 0;
+  }
+
+  /* Banner no topo, estilo capa/foto de perfil em P&B */
+  .banner{
+    width:100%;
+    aspect-ratio: 3 / 1.6;
+    background: var(--fg);
+    position:relative;
+    overflow:hidden;
+    border-bottom: 3px solid var(--line);
+  }
+  .banner svg{
+    width:100%;
+    height:100%;
+    display:block;
+  }
+
+  .content{
+    padding: 24px 20px 0 20px;
+    text-align:center;
+  }
+
+  .phrase{
+    font-size: 15px;
+    line-height:1.5;
+    color: var(--muted);
+    margin: 0 auto 28px auto;
+    max-width: 340px;
+    letter-spacing: 0.2px;
+  }
+
+  .phrase.top{
+    margin-top: 4px;
+  }
+
+  .links{
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .link-btn{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:64px;
+    border: 2px solid var(--line);
+    text-decoration:none;
+    color: #ffffff;
+    font-weight:bold;
+    font-size:15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    overflow:hidden;
+    background: var(--card-bg);
+    transition: transform 0.15s ease;
+  }
+
+  .link-btn:active{
+    transform: scale(0.98);
+  }
+
+  .link-btn .bg{
+    position:absolute;
+    inset:0;
+    filter: grayscale(1) contrast(1.1);
+  }
+
+  .link-btn .bg svg{
+    width:100%;
+    height:100%;
+    display:block;
+  }
+
+  .link-btn .overlay{
+    position:absolute;
+    inset:0;
+    background: rgba(0,0,0,0.45);
+  }
+
+  .link-btn .label{
+    position:relative;
+    z-index:2;
+    padding: 0 16px;
+  }
+
+  .footer{
+    margin-top: 36px;
+    text-align:center;
+    padding: 0 20px;
+  }
+
+  .footer .phrase{
+    margin-bottom: 10px;
+  }
+
+  .credit{
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.5px;
+  }
+
+  .divider{
+    width: 40px;
+    height: 2px;
+    background: var(--line);
+    margin: 20px auto;
+    opacity: 0.4;
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="banner">
+    <!-- Placeholder de imagem em P&B (troque pelo seu print do Pinterest em base64) -->
+    <svg viewBox="0 0 480 260" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="bgrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#1a1a1a"/>
+          <stop offset="100%" stop-color="#4d4d4d"/>
+        </linearGradient>
+        <filter id="grain">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise"/>
+          <feColorMatrix in="noise" type="matrix"
+            values="0 0 0 0 1
+                    0 0 0 0 1
+                    0 0 0 0 1
+                    0 0 0 0.06 0"/>
+        </filter>
+      </defs>
+      <rect width="480" height="260" fill="url(#bgrad)"/>
+      <rect width="480" height="260" filter="url(#grain)"/>
+    </svg>
+  </div>
+
+  <div class="content">
+    <p class="phrase top">Bem-vindo(a) ao meu espaço. Aqui estão todos os lugares onde você pode me encontrar.</p>
+
+    <div class="links">
+      <a class="link-btn" href="https://open.spotify.com/user/31lcdibstuckgdnjkhbqtt5m4db4?si=cbocu8tjSQ-8jT0FB49kOQ&utm_source=copy-link" target="_blank" rel="noopener">
+        <span class="bg">
+          <svg viewBox="0 0 300 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="64" fill="#2b2b2b"/>
+            <path d="M0 64 L60 0 L120 64 Z" fill="#3a3a3a"/>
+            <path d="M150 64 L220 0 L300 64 Z" fill="#3a3a3a"/>
+          </svg>
+        </span>
+        <span class="overlay"></span>
+        <span class="label">Spotify</span>
+      </a>
+
+      <a class="link-btn" href="https://www.instagram.com/guilhermesouzsa?stkn=Z2N4dXVlbnJjYXdu" target="_blank" rel="noopener">
+        <span class="bg">
+          <svg viewBox="0 0 300 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="64" fill="#333333"/>
+            <circle cx="60" cy="32" r="50" fill="#444444"/>
+            <circle cx="240" cy="32" r="50" fill="#262626"/>
+          </svg>
+        </span>
+        <span class="overlay"></span>
+        <span class="label">Instagram</span>
+      </a>
+
+      <a class="link-btn" href="https://github.com/guisouzsa" target="_blank" rel="noopener">
+        <span class="bg">
+          <svg viewBox="0 0 300 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="64" fill="#242424"/>
+            <rect x="0" y="0" width="300" height="8" fill="#3d3d3d"/>
+            <rect x="0" y="56" width="300" height="8" fill="#3d3d3d"/>
+          </svg>
+        </span>
+        <span class="overlay"></span>
+        <span class="label">GitHub</span>
+      </a>
+
+      <a class="link-btn" href="https://boxd.it/efhbH" target="_blank" rel="noopener">
+        <span class="bg">
+          <svg viewBox="0 0 300 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="64" fill="#2f2f2f"/>
+            <path d="M0 32 L150 0 L300 32 L150 64 Z" fill="#404040"/>
+          </svg>
+        </span>
+        <span class="overlay"></span>
+        <span class="label">Letterboxd</span>
+      </a>
+
+      <a class="link-btn" href="https://substack.com/@guisouzsa" target="_blank" rel="noopener">
+        <span class="bg">
+          <svg viewBox="0 0 300 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="64" fill="#363636"/>
+            <rect x="0" y="0" width="300" height="64" fill="#2a2a2a"/>
+            <path d="M0 20 H300 M0 32 H300 M0 44 H300" stroke="#454545" stroke-width="3"/>
+          </svg>
+        </span>
+        <span class="overlay"></span>
+        <span class="label">Substack</span>
+      </a>
+
+      <a class="link-btn" href="mailto:guilhermerodriguessouzsa@gmail.com" target="_blank" rel="noopener">
+        <span class="bg">
+          <svg viewBox="0 0 300 64" xmlns="http://www.w3.org/2000/svg">
+            <rect width="300" height="64" fill="#2c2c2c"/>
+            <path d="M0 0 L150 40 L300 0" stroke="#484848" stroke-width="6" fill="none"/>
+          </svg>
+        </span>
+        <span class="overlay"></span>
+        <span class="label">E-mail</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      <div class="divider"></div>
+      <p class="phrase">Obrigado por passar por aqui. Volte sempre.</p>
+      <p class="credit">Desenvolvido por mim.</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
